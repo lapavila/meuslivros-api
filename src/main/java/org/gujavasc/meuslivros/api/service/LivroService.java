@@ -15,4 +15,8 @@ public class LivroService {
     public List<Livro> findAll() {
         return repository.findAll();
     }
+
+    public Livro save(Livro livro) {
+        return repository.save(livro);
+    }
 }

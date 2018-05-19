@@ -28,5 +28,4 @@ INSERT INTO usuario_permissao(usuario_id, permissao_id) VALUES (1, 6);
 
 INSERT INTO usuario (id, nome, username, password) VALUES (2, 'Operador', 'operador', '$2a$04$KUILRnDr5xdCSshYm2wK8uzWRV8Wy8z3K3guPBazv82Af5fRgRfye');
 
-INSERT INTO usuario_permissao(usuario_id, permissao_id) VALUES (2, 1);
-INSERT INTO usuario_permissao(usuario_id, permissao_id) VALUES (2, 2);
+INSERT INTO usuario_permissao(usuario_id, permissao_id) VALUES (2, 5);

@@ -1,5 +1,6 @@
 package org.gujavasc.meuslivros.api.config;
 
+import org.gujavasc.meuslivros.api.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +22,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Autowired
+    UsuarioService userDetailService;
+
+    @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //$2a$10$ZnNvv5Q79fwnWtfua3B6I.bloc22NTn5alFtOVIeyOXg3rqh5m/tW
-        auth.inMemoryAuthentication()
-                .withUser("admin").password("admin").roles("ROLE");
+        auth.userDetailsService(userDetailService)
+            .passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -40,7 +43,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
 
     @Override
