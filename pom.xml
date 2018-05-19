@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.gujavasc</groupId>
-    <artifactId>mybooks-api</artifactId>
+    <artifactId>meuslivros-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>mybooks-api</name>
+    <name>meuslivros-api</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

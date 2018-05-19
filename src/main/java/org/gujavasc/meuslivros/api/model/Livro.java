@@ -1,4 +1,4 @@
-package org.gujavasc.mybooks.api.model;
+package org.gujavasc.meuslivros.api.model;
 
 import lombok.*;
 

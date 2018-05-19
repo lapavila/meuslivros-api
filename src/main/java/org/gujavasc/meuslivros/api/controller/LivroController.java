@@ -1,7 +1,7 @@
-package org.gujavasc.mybooks.api.controller;
+package org.gujavasc.meuslivros.api.controller;
 
-import org.gujavasc.mybooks.api.model.Livro;
-import org.gujavasc.mybooks.api.service.LivroService;
+import org.gujavasc.meuslivros.api.model.Livro;
+import org.gujavasc.meuslivros.api.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

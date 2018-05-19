@@ -1,7 +1,7 @@
-package org.gujavasc.mybooks.api.service;
+package org.gujavasc.meuslivros.api.service;
 
-import org.gujavasc.mybooks.api.model.Livro;
-import org.gujavasc.mybooks.api.repository.LivroRepository;
+import org.gujavasc.meuslivros.api.model.Livro;
+import org.gujavasc.meuslivros.api.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
