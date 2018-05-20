@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/livros")
@@ -22,9 +23,17 @@ public class LivroController {
     ModelMapper mapper;
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_LIVRO') and #oauth2.hasScope('read')")
     public ResponseEntity<List<Livro>> findAll() {
         List<Livro> livros = service.findAll();
         return ResponseEntity.ok(livros);
+    }
+
+    @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_LIVRO') and #oauth2.hasScope('read')")
+    public ResponseEntity<Livro> findById(@PathVariable Long id) {
+        Livro livro = service.findById(id);
+        return ResponseEntity.ok(livro);
     }
 
     @PostMapping
@@ -33,5 +42,11 @@ public class LivroController {
         Livro livro = mapper.map(dto, Livro.class);
         livro = service.save(livro);
         return ResponseEntity.status(HttpStatus.CREATED).body(livro);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_REMOVER_LIVRO') and #oauth2.hasScope('read')")
+    public void delete(@PathVariable Long id) {
+        service.delete(id);
     }
 }
