@@ -1,5 +1,6 @@
 package org.gujavasc.meuslivros.api.config;
 
+import org.gujavasc.meuslivros.api.model.Usuario;
 import org.gujavasc.meuslivros.api.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -44,6 +45,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .csrf().disable()
                 .headers().frameOptions().disable();
+
     }
 
     @Bean
